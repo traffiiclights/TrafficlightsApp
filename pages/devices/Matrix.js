@@ -4,36 +4,19 @@ import Header from "../../components/Header";
 import Slider from "@react-native-community/slider";
 import axios from "axios";
 
-import { sendPong } from "../../functions/calls";
-
-const Pong = ({ navigation }) => {
+const Matrix = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Header navigation={navigation}>Pong</Header>
+      <Header navigation={navigation}>Matrix</Header>
       <View style={styles.sliderContainer}>
-        <Text>You're Player x</Text>
-        <Slider
-          style={{
-            width: "100%",
-            height: "100%",
-            transform: [{ rotate: "-90deg" }],
-          }}
-          minimumValue={0}
-          maximumValue={255}
-          step={1}
-          minimumTrackTintColor="#FFFFFF"
-          maximumTrackTintColor="#000000"
-          thumbImage={require("../../assets/wall.png")}
-          onValueChange={async (value) => {
-            sendPong({ value: value, player: 1 });
-          }}
-        />
+        <Text>There the Matrix Settings will be displayed</Text>
+        
       </View>
     </View>
   );
 };
 
-export default Pong;
+export default Matrix;
 
 const styles = StyleSheet.create({
   container: {

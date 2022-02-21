@@ -1,7 +1,11 @@
 import React, { createContext, useReducer } from "react";
 
 import Icon from "react-native-vector-icons/Ionicons";
-import GameRoute from "./games/GamesRoute"
+import Icon2 from "react-native-vector-icons/MaterialCommunityIcons";
+import GameRoute from "./games/GamesRoute";
+import ViewRoute from "./view/ViewRoute";
+import DeviceRoute from "./devices/DeviceRoute"
+
 import colors from "../css/colors";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useColorScheme, StyleSheet, View, Text } from "react-native";
@@ -37,19 +41,19 @@ const Navbar = () => {
             </View>
           ),
         }}
-      />
+      />*/}
       <Tab.Screen
-        name="ShopRoute"
-        component={ShopRoute}
+        name="View"
+        component={ViewRoute}
         options={{
           tabBarIcon: ({ color, size }) => (
             <View>
-              <Icon name="cart-outline" size={30} color={colors.main2} />
-              <Text style={{ fontSize: 12 }}>Kaufen</Text>
+              <Icon2 name="led-strip-variant" size={30} color={colors.main2} />
+              <Text style={{ fontSize: 12 }}>View</Text>
             </View>
           ),
         }}
-      />*/}
+      />
       <Tab.Screen
         name="Games"
         component={GameRoute}
@@ -63,22 +67,23 @@ const Navbar = () => {
           },
         }}
       />
-      {/*<Tab.Screen
-        name="LoginProfile"
-        component={LoginProfile}
+      <Tab.Screen
+        name="Devices"
+        component={DeviceRoute}
         options={{
           tabBarIcon: ({ color, size }) => (
             <View style={styles.tabS}>
-              <Icon
-                name="person-circle-outline"
+              <Icon2
+                name="devices"
                 size={30}
                 color={colors.main2}
               />
-              <Text style={{ fontSize: 12 }}>Profil</Text>
+              <Text style={{ fontSize: 12 }}>Geräte</Text>
             </View>
           ),
         }}
       />
+      {/*
       <Tab.Screen
         name="Information"
         component={LoginProfile}
